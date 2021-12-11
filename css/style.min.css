@@ -1,0 +1,328 @@
+@charset "UTF-8";
+body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  text-align: center;
+}
+
+.t-red {
+  color: red;
+}
+
+.f-sm {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 500px) {
+  .f-sm {
+    font-size: 14px;
+  }
+}
+
+.video-wrapper {
+  text-align: center;
+}
+
+.tac {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .tac {
+    font-size: 12px;
+  }
+}
+
+video {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  video {
+    width: 90%;
+  }
+}
+
+section {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    margin-bottom: 40px;
+  }
+}
+
+.tar {
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+@-webkit-keyframes btn-large {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+@keyframes btn-large {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+@-webkit-keyframes btn-move {
+  0% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes btn-move {
+  0% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+.top-coupon-present {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 0;
+  line-height: 42px;
+}
+
+@media screen and (max-width: 500px) {
+  .top-coupon-present {
+    font-size: 18px;
+    padding: 30px 0;
+    line-height: 37px;
+  }
+}
+
+.top-coupon-present .marker {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, transparent), color-stop(65%, #fdff69));
+  background: linear-gradient(transparent 65%, #fdff69 65%);
+  font-weight: bold;
+}
+
+.yes-or-no .btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .yes-or-no .btn-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.yes-or-no .btn-wrapper .btn {
+  width: 40%;
+  background-color: white;
+  text-align: center;
+  padding: 30px 20px;
+  color: #3386BF;
+  border: 2px solid #3386BF;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .yes-or-no .btn-wrapper .btn {
+    padding: 20px;
+  }
+}
+
+.yes-or-no .btn-wrapper .yes.on {
+  background-color: #BCF1F9;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+.yes-or-no .btn-wrapper .no.on {
+  background-color: #BCF1F9;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+.check {
+  font-weight: bold;
+  /* inputは非表示にする */
+  /* □ */
+  /* ✓ */
+  /* チェックが入ったときの□ */
+  /* チェックが入ったときの✓ */
+}
+
+.check .check-item {
+  padding-right: 20px;
+}
+
+.check .my-checkbox {
+  display: block;
+  position: relative;
+  margin: 1em 0;
+  padding-left: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* テキストの選択を防ぐ */
+}
+
+@media screen and (max-width: 500px) {
+  .check .my-checkbox {
+    font-size: 18px;
+  }
+}
+
+.check .my-checkbox input {
+  display: none;
+}
+
+.check .checkmark {
+  position: absolute;
+  top: 5px;
+  /* 上からの位置 */
+  left: 20px;
+  height: 20px;
+  /* 大きさ */
+  width: 20px;
+  /* 大きさ */
+  border: solid 2px #5799ff;
+  /* 線 */
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 500px) {
+  .check .checkmark {
+    top: 2px;
+  }
+}
+
+.check .checkmark:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  /* チェックの位置 */
+  top: 1px;
+  /* チェックの位置 */
+  width: 6px;
+  /* チェックの大きさ */
+  height: 10px;
+  /* チェックの大きさ */
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  opacity: 0;
+  /* 透明にしておく */
+}
+
+.check .my-checkbox input:checked + .checkmark {
+  background: #2e80ff;
+  /* チェック時の色 */
+  border-color: #2e80ff;
+  /* チェック時の色 */
+}
+
+.check .my-checkbox input:checked + .checkmark:after {
+  opacity: 1;
+  /* 透明を解除 */
+}
+
+.send-btn {
+  -webkit-animation-name: btn-large;
+          animation-name: btn-large;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .send-btn {
+    width: 95%;
+  }
+}
+
+.move {
+  -webkit-animation-name: btn-move;
+          animation-name: btn-move;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+}
+
+.click-show {
+  display: none;
+}
+
+footer {
+  width: 270px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0px 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer p {
+  font-size: 13px;
+}
+
+footer p a {
+  color: #000;
+}
+/*# sourceMappingURL=style.min.css.map */

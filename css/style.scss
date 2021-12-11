@@ -1,0 +1,272 @@
+$breakpoints: (
+  //キー値
+  "sp": "screen and (max-width: 500px)",
+  "tab": "screen and (max-width: 899px)",
+  "pc": "screen and (min-width: 900px)"
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: sp) {
+  //map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+
+// 共通クラス開始
+body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+  text-align: center;
+}
+
+.t-red {
+  color: red;
+}
+.f-sm {
+  font-size: 16px;
+  @include mq(sp) {
+    font-size: 14px;
+  }
+}
+.video-wrapper {
+  text-align: center;
+}
+.tac{
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  @include mq(sp){
+    font-size: 12px;
+  }
+}
+
+video {
+  width: 90%;
+  // height: 100%;
+  text-align: center;
+  margin: 0 auto;
+
+  @include mq(sp) {
+    width: 90%;
+  }
+}
+
+section{
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  @include mq(sp){
+    margin-bottom: 40px;
+  }
+}
+
+.tar{
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+// アニメーション開始
+@keyframes btn-large {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.05);
+  }
+}
+@keyframes btn-move {
+  0%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(10px);
+  }
+}
+// アニメーション終了
+// 共通クラス終了
+
+
+.top-coupon-present {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 0;
+  line-height: 42px;
+
+  @include mq(sp) {
+    font-size: 18px;
+    padding: 30px 0;
+    line-height: 37px;
+  }
+
+  .marker {
+    background: linear-gradient(transparent 65%, #fdff69 65%);
+    font-weight: bold;
+  }
+}
+
+// 2択アンケート開始
+.yes-or-no{
+  // margin-top: 20px;
+  
+  .btn-wrapper{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @include mq(sp){
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .btn{
+      width: 40%;
+      background-color: white;
+      text-align: center;
+      padding: 30px 20px;
+      color: #3386BF;
+      border: 2px solid #3386BF;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 22px;
+      cursor: pointer;
+      
+      @include mq(sp){
+        padding: 20px;
+      }
+    }
+    .yes.on{
+      background-color: #BCF1F9;
+      transition: background-color .2s;
+    }
+    .no.on{
+      background-color: #BCF1F9;
+      transition: background-color .2s;
+    }
+  }
+}
+// 2択アンケート終了
+
+
+// 複数回答アンケート開始
+.check {
+  // padding-left: 20px;
+  // padding-top: 5px;
+  // padding-bottom: 1px;
+  font-weight: bold;
+  
+  .check-item{
+    padding-right: 20px;
+  }
+  
+  .my-checkbox {
+    display: block;
+    position: relative;
+    margin: 1em 0;
+    padding-left: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none; /* テキストの選択を防ぐ */
+
+    @include mq(sp){
+      font-size: 18px;
+    }
+  }
+  
+  /* inputは非表示にする */
+  .my-checkbox input {
+    display: none;
+  }
+  
+  /* □ */
+  .checkmark {
+    position: absolute;
+    top: 5px; /* 上からの位置 */
+    left: 20px;
+    height: 20px; /* 大きさ */
+    width: 20px; /* 大きさ */
+    border: solid 2px #5799ff; /* 線 */
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    @include mq(sp){
+      top: 2px;
+    }
+  }
+  /* ✓ */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 5px; /* チェックの位置 */
+    top: 1px; /* チェックの位置 */
+    width: 6px; /* チェックの大きさ */
+    height: 10px; /* チェックの大きさ */
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0; /* 透明にしておく */
+  }
+  
+  /* チェックが入ったときの□ */
+  .my-checkbox input:checked + .checkmark {
+    background: #2e80ff; /* チェック時の色 */
+    border-color: #2e80ff; /* チェック時の色 */
+  }
+  
+  /* チェックが入ったときの✓ */
+  .my-checkbox input:checked + .checkmark:after {
+    opacity: 1; /* 透明を解除 */
+  }
+}
+// 複数回答アンケート終了
+
+.send-btn{
+  animation-name: btn-large;
+  animation-iteration-count: infinite;
+  animation-duration: .5s;
+  animation-direction: alternate;
+  cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+
+  @include mq(sp){
+    width: 95%;
+  }
+}
+.move{
+  animation-name: btn-move;
+  animation-duration: .3s;
+}
+
+
+// クリックしたら表示するやつ開始
+.click-show{
+  display: none;
+}
+// クリックしたら表示するやつ終了
+
+footer{
+  width: 270px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  gap: 0px 10px;
+  flex-wrap: wrap;
+
+  p{
+    font-size: 13px;
+
+    a{
+      color: #000;
+    }
+  }
+}
